@@ -78,7 +78,8 @@ class CustomErrorImage: UIView {
     
     func isOneLetterName(text: String) {
         if (text.count == 1) {
-            errorDetected(errorName: "Only one letter")
+//            errorDetected(errorName: "Only one letter")
+            errorDetected(errorName: "В имени не может быть одна буква")
         } else {
             errorDetected(errorName: nil)
             currentError.text = nil
@@ -89,7 +90,8 @@ class CustomErrorImage: UIView {
         let decimalCharacters = CharacterSet.decimalDigits
         let decimalRange = text.rangeOfCharacter(from: decimalCharacters)
         if decimalRange != nil {
-            errorDetected(errorName: "Number in name")
+//            errorDetected(errorName: "Number in name")
+            errorDetected(errorName: "В имени не могут быть цифры")
         } else if (currentError.text == nil) {
             errorDetected(errorName: nil)
             currentError.text = nil
@@ -105,13 +107,15 @@ class CustomErrorImage: UIView {
         print("Special: \(special)")
         
         if (russian == false && english == false) {
-            errorDetected(errorName: "Two languages")
+//            errorDetected(errorName: "Two languages")
+            errorDetected(errorName: "В имени не может быть два языка")
         } else if (currentError.text == nil) {
             errorDetected(errorName: nil)
             currentError.text = nil
         }
         if special == true && text != "" && (!russian || !english) {
-            errorDetected(errorName: "Special Cymbol")
+//            errorDetected(errorName: "Special Cymbol")
+            errorDetected(errorName: "В имени не могут быть специальные символы")
         }
     }
     
@@ -149,7 +153,8 @@ class CustomErrorImage: UIView {
         } else {
             guard let age = Int(text ?? "") else { return }
             if (age <= 3 || 95 <= age) {
-                errorDetected(errorName: "Age is not relevant")
+//                errorDetected(errorName: "Age is not relevant")
+                errorDetected(errorName: "Некорректный возраст")
             } else {
                 errorDetected(errorName: nil)
                 currentError.text = nil
