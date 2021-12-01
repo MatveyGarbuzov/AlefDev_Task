@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let labelAndButtonHorizontalStack = CustomStack()
     let kidsScrollView = CustomScrollView()
     let clearButton = RoundedButton()
+    let filler = UIView()
     
     let bottomSpacer = UIView()
     
@@ -61,12 +62,14 @@ class ViewController: UIViewController {
 
     
     func createMyStack() -> UIStackView {
+        filler.setHeight(to: 10)
         let stack = UIStackView(arrangedSubviews: [
             personDataLabel,
             ViewController.personalDataStack,
             labelAndButtonHorizontalStack,
             kidsScrollView,
-            clearButton
+            clearButton,
+            filler
         ])
         stack.layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         stack.isLayoutMarginsRelativeArrangement = true
