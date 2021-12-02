@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1C6E0BFC2753DDA700800DDD /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E0BFB2753DDA700800DDD /* CustomScrollView.swift */; };
-		1C6E0BFE27563DA700800DDD /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E0BFD27563DA700800DDD /* Sizes.swift */; };
 		1C6E0C00275646F000800DDD /* Example.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6E0BFF275646F000800DDD /* Example.png */; };
 		1CA5CEDB274FAF5D00CA98D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5CEDA274FAF5D00CA98D5 /* AppDelegate.swift */; };
 		1CA5CEDD274FAF5D00CA98D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5CEDC274FAF5D00CA98D5 /* SceneDelegate.swift */; };
@@ -29,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		1C6E0BFB2753DDA700800DDD /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
-		1C6E0BFD27563DA700800DDD /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		1C6E0BFF275646F000800DDD /* Example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Example.png; sourceTree = "<group>"; };
 		1CA5CED7274FAF5D00CA98D5 /* AlefDev_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlefDev_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA5CEDA274FAF5D00CA98D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,11 +83,10 @@
 				1CA5CEDE274FAF5D00CA98D5 /* ViewController.swift */,
 				1C6E0BFB2753DDA700800DDD /* CustomScrollView.swift */,
 				1CA5CEF4274FB0F000CA98D5 /* CustomStack.swift */,
-				1C6E0BFD27563DA700800DDD /* Sizes.swift */,
+				1CA5CEF8274FD73700CA98D5 /* CustomButtons.swift */,
 				1CA5CEF2274FB00000CA98D5 /* CustomLabel.swift */,
 				1CA5CEF6274FD0CA00CA98D5 /* TextHolder.swift */,
 				1CA5CF0027517D0100CA98D5 /* CustomErrorImage.swift */,
-				1CA5CEF8274FD73700CA98D5 /* CustomButtons.swift */,
 				1CA5CEFE274FFFE600CA98D5 /* CustomSpace.swift */,
 				1CA5CEFA274FDABC00CA98D5 /* CustomColors.swift */,
 				1CA5CEE3274FAF5E00CA98D5 /* Assets.xcassets */,
@@ -183,7 +180,6 @@
 				1CA5CEF5274FB0F000CA98D5 /* CustomStack.swift in Sources */,
 				1CA5CEF9274FD73700CA98D5 /* CustomButtons.swift in Sources */,
 				1CA5CEFF274FFFE600CA98D5 /* CustomSpace.swift in Sources */,
-				1C6E0BFE27563DA700800DDD /* Sizes.swift in Sources */,
 				1CA5CEFB274FDABC00CA98D5 /* CustomColors.swift in Sources */,
 				1CA5CEDB274FAF5D00CA98D5 /* AppDelegate.swift in Sources */,
 				1CA5CEF7274FD0CA00CA98D5 /* TextHolder.swift in Sources */,

@@ -90,11 +90,11 @@ class CustomStack: UIView {
         
         spacingLine.setup(color: Colors.spacingLineGray)
         
-        horizontalStackName.setHeight(to: Sizes.kidNameHeight)
-        horizontalStackAge.setHeight(to: Sizes.kidAgeHeight)
+        horizontalStackName.setHeight(to: 45)
+        horizontalStackAge.setHeight(to: 45)
         
         let filler = UIView()
-        filler.setHeight(to: Sizes.kdiFillerHeight)
+        filler.setHeight(to: 10)
         
         stack = UIStackView(arrangedSubviews: [
             horizontalStackName,
