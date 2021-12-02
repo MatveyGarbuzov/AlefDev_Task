@@ -40,7 +40,7 @@ class ViewController: UIViewController {
             textColor: Colors.clearButtonRed
         )
         clearButton.setHeight(to: 50)
-        
+        clearButton.alpha = 0
         // ?КОСТЫЛЬ?
         bottomSpacer.setHeight(to: Double(view.frame.height - mainStack.frame.height))
         
@@ -88,7 +88,6 @@ class ViewController: UIViewController {
     
     @objc func childrenButtonPressed(sender: CustomButton) {
         sender.animate()
-
         let childrenDataStack = CustomStack()
         childrenDataStack.setupChildrenStack()
 //        childrenDataStack.setWidth(to: Double(kidsScrollView.frame.size.width))
@@ -103,7 +102,9 @@ class ViewController: UIViewController {
         kidsScrollView.kidsStack.stack.insertArrangedSubview(childrenDataStack, at: 0)
         
         childrenDataStack.animate()
-        print("helo")
+        if (count == 0) {
+            clearButton.animateTransition(view: clearButton)
+        }
         count += 1
         if (count == 5) {
             sender.disable()
@@ -112,6 +113,7 @@ class ViewController: UIViewController {
     
     @objc func clearButtonPressed(sender: CustomButton) {
         sender.animate()
+        clearButton.animateTransition(view: clearButton)
         kidsScrollView.kidsStack.stack.removeFullyAllArrangedSubviews()
         count = 0
     }
@@ -128,8 +130,11 @@ class ViewController: UIViewController {
         view.removeFromSuperview()
         
         count -= 1
-        if count < 5 {
+        if count == 4 {
             labelAndButtonHorizontalStack.button.button.enable()
+        }
+        if (count == 0) {
+            clearButton.animateTransition(view: clearButton)
         }
     }
     

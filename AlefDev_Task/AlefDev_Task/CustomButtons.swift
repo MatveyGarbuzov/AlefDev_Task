@@ -10,19 +10,23 @@ import UIKit
 final class RoundedButton: UIView {
     let button = CustomButton(type: .system)
     
-//    var isEnabled = true {
-//        didSet {
-//            button.isEnabled = !button.isEnabled
-//            button.layer.borderColor = UIColor.lightGray.cgColor
-//            button.setTitleColor(.lightGray, for: .normal)
-//        }
-//    }
-    
     func setup(title: String, selector: Selector, borderColor: UIColor, textColor: UIColor) {
         self.addSubview(button)
         button.pin(to: self)
         button.setup(title: title, selector: selector,
                      borderColor: borderColor, textColor: textColor)
+    }
+    
+    func animateTransition(view: UIView) {
+        if view.alpha == 0 {
+            UIView.animate(withDuration: 0.3) {
+                view.alpha = 1
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                view.alpha = 0
+            }
+        }
     }
 }
 
@@ -44,9 +48,9 @@ class CustomButton: UIButton {
         addTarget(nil, action: selector, for: .touchUpInside)
     }
     
-    func animate() {
+    func animate(scaledByX x:CGFloat = 0.95, scaledByY y:CGFloat = 0.95) {
         UIView.animate(withDuration: 0.1, animations: {
-            self.transform = self.transform.scaledBy(x: 0.95, y: 0.95)
+            self.transform = self.transform.scaledBy(x: x, y: y)
             
         }) { _ in
             UIView.animate(withDuration: 0.1, animations: {
@@ -56,7 +60,7 @@ class CustomButton: UIButton {
     }
     
     func disable(count : Float = 3, for duration : TimeInterval = 0.2,
-               withTranslation translation : Float = 5) {
+                 withTranslation translation : Float = 5) {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         animation.repeatCount = count
@@ -70,7 +74,7 @@ class CustomButton: UIButton {
     }
     
     func enable() {
-        animate()
+        animate(scaledByX: 1.03, scaledByY: 1.03)
         layer.borderColor = Colors.borderBlue.cgColor
         setTitleColor(Colors.textBlue, for: .normal)
         isEnabled = true
