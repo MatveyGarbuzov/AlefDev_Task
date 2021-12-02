@@ -9,4 +9,4 @@
 
 #### Ниже прикрипляю скриншот из приложения и пример работы в виде .gif
 
-<img src="https://github.com/MatveyGarbuzov/AlefDev_Task/blob/main/example.gif" width="350" height="700" /> <img src="https://github.com/MatveyGarbuzov/AlefDev_Task/blob/main/example.png" width="350" height="700" />
+<img src="https://github.com/MatveyGarbuzov/AlefDev_Task/blob/main/example.png" width="350" height="700" />
