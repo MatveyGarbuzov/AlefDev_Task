@@ -39,6 +39,8 @@ class CustomScrollView: UIView {
         kidsStack.setupChildrenStack()
         kidsStack.stack.removeFullyAllArrangedSubviews()
         kidsStack.pinWidth(to: self.widthAnchor)
+        kidsStack.stack.layoutMargins = UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 5)
+        kidsStack.stack.isLayoutMarginsRelativeArrangement = true
     }
 }
 

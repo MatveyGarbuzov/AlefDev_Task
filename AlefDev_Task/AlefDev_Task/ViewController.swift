@@ -98,7 +98,7 @@ class ViewController: UIViewController {
         kidsScrollView.scrollView.addSubview(childrenDataStack)
         kidsScrollView.addSubview(childrenDataStack)
 //        mainStack.insertArrangedSubview(childrenDataStack, at: 3)
-        
+        kidsScrollView.kidsStack.alpha = 1
         kidsScrollView.kidsStack.stack.insertArrangedSubview(childrenDataStack, at: 0)
         
         childrenDataStack.animate()
@@ -122,7 +122,10 @@ class ViewController: UIViewController {
         let firstAction: UIAlertAction = UIAlertAction(
                 title: "Сбросить данные", style: .destructive) { action -> Void in
             self.clearButton.animateTransition(view: self.clearButton)
-            self.kidsScrollView.kidsStack.stack.removeFullyAllArrangedSubviews()
+            self.kidsScrollView.kidsStack.animateTransition(view: self.kidsScrollView.kidsStack)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                self.kidsScrollView.kidsStack.stack.removeFullyAllArrangedSubviews()
+            }
             self.count = 0
             self.labelAndButtonHorizontalStack.button.button.enable()
         }

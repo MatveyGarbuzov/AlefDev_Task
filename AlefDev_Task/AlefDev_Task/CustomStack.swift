@@ -133,4 +133,16 @@ class CustomStack: UIView {
             })
         }
     }
+    
+    func animateTransition(view: UIView) {
+        if view.alpha == 0 {
+            UIView.animate(withDuration: 0.3) {
+                view.alpha = 1
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                view.alpha = 0
+            }
+        }
+    }
 }
