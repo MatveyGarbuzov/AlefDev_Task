@@ -113,9 +113,26 @@ class ViewController: UIViewController {
     
     @objc func clearButtonPressed(sender: CustomButton) {
         sender.animate()
-        clearButton.animateTransition(view: clearButton)
-        kidsScrollView.kidsStack.stack.removeFullyAllArrangedSubviews()
-        count = 0
+        let actionSheetController: UIAlertController = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+
+        let firstAction: UIAlertAction = UIAlertAction(
+                title: "Сбросить данные", style: .destructive) { action -> Void in
+            self.clearButton.animateTransition(view: self.clearButton)
+            self.kidsScrollView.kidsStack.stack.removeFullyAllArrangedSubviews()
+            self.count = 0
+            self.labelAndButtonHorizontalStack.button.button.enable()
+        }
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+
+        actionSheetController.addAction(firstAction)
+        actionSheetController.addAction(cancelAction)
+
+        actionSheetController.popoverPresentationController?.sourceView = sender // works for iPhone & iPad
+        present(actionSheetController, animated: true)
     }
     
     @objc func deleteButtonPressed(sender: CustomButton) {
