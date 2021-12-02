@@ -1,5 +1,5 @@
 //
-//  ButtonClass.swift
+//  RoundedButton.swift
 //  AlefDev_TestTask
 //
 //  Created by Matvey Garbuzov on 23.11.2021.
@@ -59,7 +59,8 @@ class CustomButton: UIButton {
         }
     }
     
-    func shakeAnimation(count : Float = 3, for duration : TimeInterval = 0.2,
+    func shakeAnimation(count : Float = 3,
+                        for duration : TimeInterval = 0.2,
                         withTranslation translation : Float = 5) {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)

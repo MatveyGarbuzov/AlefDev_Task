@@ -9,7 +9,7 @@ import UIKit
 
 class TextHolder: UIView {
     let textField = TextField()
-    let errorLabel = CustomErrorImage()
+    let errorLabel = ErrorImage()
     
     func setup(title: String) {
         self.addSubview(textField)

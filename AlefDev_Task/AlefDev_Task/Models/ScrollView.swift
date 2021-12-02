@@ -1,5 +1,5 @@
 //
-//  CustomScrollView.swift
+//  ScrollView.swift
 //  AlefDev_Task
 //
 //  Created by Matvey Garbuzov on 28.11.2021.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class CustomScrollView: UIView {
-    let scrollView = UIScrollView()
-    let kidsStack = CustomStack()
+class ScrollView: UIView {
+    let scrollView  = UIScrollView()
+    let kidsStack   = Stack()
     let clearButton = CustomButton()
     
     func setup() {
@@ -28,7 +28,6 @@ class CustomScrollView: UIView {
         scrollView.pinBottom(to: self)
         scrollView.pinLeft(to: self)
         scrollView.pinRight(to: self)
-//        scrollView.backgroundColor = .lightGray
     }
 
     

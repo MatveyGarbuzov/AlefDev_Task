@@ -1,5 +1,5 @@
 //
-//  CustomStack.swift
+//  Stack.swift
 //  AlefDev_Task
 //
 //  Created by Matvey Garbuzov on 25.11.2021.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-class CustomStack: UIView {
+class Stack: UIView {
     var stack = UIStackView()
     
     let name        = TextHolder()
     let age         = TextHolder()
-    let errorLabel  = CustomLabel()
-    let label       = CustomLabel()
-    let space       = CustomSpace()
-    let spacingLine = CustomSpace()
+    let errorLabel  = Label()
+    let label       = Label()
+    let space       = Space()
+    let spacingLine = Space()
     let button      = RoundedButton()
     let clearButton = RoundedButton()
     
@@ -29,10 +29,6 @@ class CustomStack: UIView {
             age,
             errorLabel
         ])
-        
-//        name.textField.backgroundColor = .blue
-//        age.textField.backgroundColor = .blue
-//        errorLabel.backgroundColor = .blue
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.spacing = 10
@@ -55,11 +51,9 @@ class CustomStack: UIView {
             label,
             button
         ])
-        
         stack.axis = .horizontal
         stack.distribution = .fillEqually
         stack.spacing = 10
-        
         setHeight(to: 50)
         
         addSubview(stack)
@@ -101,24 +95,9 @@ class CustomStack: UIView {
             horizontalStackAge,
             filler
         ])
-        
         stack.axis = .vertical
         stack.distribution = .fillProportionally
         stack.spacing = 10
-        
-        
-        addSubview(stack)
-        stack.pin(to: self)
-    }
-    
-    func setupEmptyStack() {
-        stack = UIStackView(arrangedSubviews: [])
-        
-        stack.axis = .vertical
-        stack.distribution = .fillEqually
-        stack.spacing = 10
-        
-        setHeight(to: 100)
         
         addSubview(stack)
         stack.pin(to: self)

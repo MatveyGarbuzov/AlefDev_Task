@@ -1,5 +1,5 @@
 //
-//  CustomWarningView.swift
+//  ErrorImage.swift
 //  AlefDev_Task
 //
 //  Created by Matvey Garbuzov on 26.11.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomErrorImage: UIView {
+class ErrorImage: UIView {
     var errorImage = UIImageView()
     var currentError = UILabel()
     
@@ -16,8 +16,7 @@ class CustomErrorImage: UIView {
         addActionToView()
     
         addSubview(errorImage)
-        errorImage.frame   = CGRect(x: 0, y: 0, width: 25, height: 25)
-        print(self.frame.height)
+        errorImage.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
     }
     
     func addImageToView() {
@@ -102,9 +101,6 @@ class CustomErrorImage: UIView {
         let russian = isRussian(text: text)
         let english = isEnglish(text: text)
         let special = isNoSpecialSymbols(text: text)
-        print("Russian: \(russian)")
-        print("English: \(english)")
-        print("Special: \(special)")
         
         if (russian == false && english == false) {
 //            errorDetected(errorName: "Two languages")
@@ -168,16 +164,12 @@ class CustomErrorImage: UIView {
     
     func errorDetected(errorName text: String?) {
         let myView = ViewController.personalDataStack.errorLabel.label
-//        print("|||Text: \(text)")
-//        print("|||currentError: \(currentError.text)")
         if (text == nil && currentError.text == nil) {
             self.isHidden = true
             self.animate()
-//            print("correct")
         } else {
             self.isHidden = false
             self.animate()
-//            print("ErrorName: \"\(text ?? "unknown")\"")
             animateTransition(view: myView)
             myView.text = text
             currentError.text = text

@@ -1,5 +1,5 @@
 //
-//  CustomLabel.swift
+//  Label.swift
 //  AlefDev_Task
 //
 //  Created by Matvey Garbuzov on 25.11.2021.
@@ -7,8 +7,7 @@
 
 import UIKit
 
-class CustomLabel: UIView {
-
+class Label: UIView {
     let label = UILabel()
     
     func setup(title: String) {
@@ -28,8 +27,6 @@ class CustomLabel: UIView {
         label.textColor = Colors.errorRed
         label.textAlignment = .center
         label.text = title
-//        label.font = label.font.withSize(17)
         label.adjustsFontSizeToFitWidth = true
-//        setHeight(to: 50)
     }
 }
